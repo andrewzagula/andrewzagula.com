@@ -44,7 +44,7 @@ export default function Home() {
             />
           </h1>
           <p className={styles.heroDescription}>
-            I&apos;m a high school senior from New Jersey, interested in applied ML, low-latency infrastructure, & distributed systems.
+            I&apos;m an incoming freshman at Caltech studying computer science, interested in AI research, product development, & quantitative engineering.
           </p>
           <div className={styles.heroSocials}>
             <a
@@ -283,11 +283,36 @@ export default function Home() {
           <div className={styles.itemList}>
 
             <div className={styles.itemContainer}>
+              <div className={styles.item}>
+                <div className={styles.itemLogo}>
+                  <Image
+                    src="/CT.png"
+                    alt="California Institute of Technology"
+                    width={56}
+                    height={56}
+                    className={styles.itemLogoImage}
+                    quality={100}
+                    unoptimized
+                  />
+                </div>
+                <div className={styles.itemContent}>
+                  <div>
+                    <h3 className={styles.itemTitle}>California Institute of Technology</h3>
+                    <p className={styles.itemSubtitle}>B.S. in Computer Science</p>
+                  </div>
+                  <div className={styles.itemRight}>
+                    <span className={styles.itemDate}>Sep 2026 - Jun 2030</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.itemContainer}>
               <div className={styles.item} onClick={() => toggleItem('edu-2')}>
                 <div className={styles.itemLogo}>
-                  <Image 
-                    src="/BR.png" 
-                    alt="Bridgewater-Raritan High School" 
+                  <Image
+                    src="/BR.png"
+                    alt="Bridgewater-Raritan High School"
                     width={56} 
                     height={56} 
                     className={styles.itemLogoImage}
