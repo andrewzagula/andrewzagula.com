@@ -121,7 +121,7 @@ export default function Home() {
                     <p className={styles.itemSubtitle}>Co-Founder</p>
                   </div>
                   <div className={styles.itemRight}>
-                    <span className={styles.itemDate}>Jan 2025 - Present</span>
+                    <span className={styles.itemDate}>Jan 2025 - Mar 2026</span>
                     <svg 
                       className={`${styles.chevron} ${expandedItems.has('work-4') ? styles.chevronExpanded : ''}`}
                       xmlns="http://www.w3.org/2000/svg" 
