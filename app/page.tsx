@@ -56,7 +56,7 @@ export default function Home() {
               <span className={styles.heroSocialLabel}>Email</span>
             </a>
             <a
-              href="/Resume.pdf"
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.heroSocialLink}
@@ -142,7 +142,7 @@ export default function Home() {
               {expandedItems.has('work-4') && (
                 <div className={styles.itemDetails}>
                   <p className={styles.itemDescription}>
-                    Student-alumni social networking platform backed by Google, Vercel, Stripe, Notion, Datadog, & more
+                    Student-alumni social networking platform backed by Google, Vercel, Stripe, and others
                   </p>
                   <a href="https://thealumhub.com" target="_blank" rel="noopener noreferrer" className={styles.arxivLink}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -196,7 +196,7 @@ export default function Home() {
               {expandedItems.has('work-2') && (
                 <div className={styles.itemDetails}>
                   <p className={styles.itemDescription}>
-                    Adaptive adversarial prompting for multi-turn LLM jailbreaking; first-author @ NeurIPS 2025 Lock-LLM
+                    Adaptive adversarial prompting for multi-turn LLM jailbreaking (first-author at NeurIPS 2025 Lock-LLM)
                   </p>
                   <a href="https://arxiv.org/abs/2511.02376" target="_blank" rel="noopener noreferrer" className={styles.arxivLink}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -250,7 +250,7 @@ export default function Home() {
               {expandedItems.has('work-1') && (
                 <div className={styles.itemDetails}>
                   <p className={styles.itemDescription}>
-                    Pre-training & benchmarking sample-efficient vision language models; co-author @ CVPR 2026
+                    Pre-training & benchmarking sample-efficient vision language models (co-author at CVPR 2026)
                   </p>
                   <div className={styles.itemLinks}>
                     <a href="https://arxiv.org/abs/2512.10932" target="_blank" rel="noopener noreferrer" className={styles.arxivLink}>
