@@ -347,11 +347,11 @@ export default function Home() {
               {expandedItems.has('edu-2') && (
                 <div className={styles.itemDetails}>
                   <p className={styles.itemDescription}>
-                    GPA: 5.0; SAT: 1570
+                    GPA: 5.0 (Salutatorian)
                     <br /><br />
-                    Boys&apos; Varsity Volleyball (Captain); DECA Club (President); Key Club (President) 
+                    Activities and societies: Boys&apos; Varsity Volleyball; DECA Club; Key Club
                     <br /><br />
-                    Coursework: Calculus III, Differential Equations, Linear Algebra, AP Calculus BC, AP Physics C, AP Chemistry, AP Biology, AP Computer Science A, Data Structures (Rutgers University)
+                    Calculus III, Differential Equations, Linear Algebra, AP Calculus BC, AP Physics C, AP Chemistry, AP Biology, AP Computer Science A, Data Structures (Rutgers University)
                   </p>
                 </div>
               )}
