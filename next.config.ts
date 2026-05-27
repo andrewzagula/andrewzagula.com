@@ -4,12 +4,11 @@ const nextConfig: NextConfig = {
   images: {
     qualities: [100, 75],
   },
-  async redirects() {
+  async rewrites() {
     return [
       {
         source: "/Resume.pdf",
         destination: "/resume.pdf",
-        permanent: true,
       },
     ];
   },
