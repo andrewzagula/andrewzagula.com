@@ -364,8 +364,8 @@
   border: 1px solid transparent;
   border-radius: 16px;
   overflow: hidden;
-  background-color: var(--surface-raised);
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  background-color: var(--background);
+  transition: border-color 0.2s ease;
 }
 
 .projectCard:hover {
@@ -386,6 +386,7 @@
 }
 
 .projectContent {
+  background-color: var(--background);
   padding: 20px;
 }
 
