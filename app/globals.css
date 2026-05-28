@@ -4,7 +4,54 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #000000;
+  --foreground: #111827;
+  --muted: #4b5563;
+  --subtle: #6b7280;
+  --faint: #9ca3af;
+  --surface: #ffffff;
+  --surface-muted: #f3f4f6;
+  --surface-raised: #ffffff;
+  --border: #e5e7eb;
+  --link: #2563eb;
+  --link-hover: #1d4ed8;
+  --tag-background: #f3f4f6;
+  --tag-text: #374151;
+  --button-background: #111827;
+  --button-text: #ffffff;
+  --disabled-background: #f3f4f6;
+  --disabled-text: #9ca3af;
+  --placeholder-start: #e5e7eb;
+  --placeholder-end: #d1d5db;
+  --theme-toggle-background: #f2f2f7;
+  --theme-toggle-hover-background: #ececf4;
+  --theme-toggle-icon: #080a3f;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --background: #0f1218;
+  --foreground: #f8fafc;
+  --muted: #cbd5e1;
+  --subtle: #94a3b8;
+  --faint: #64748b;
+  --surface: #151a22;
+  --surface-muted: #1f2937;
+  --surface-raised: #111827;
+  --border: #334155;
+  --link: #7dd3fc;
+  --link-hover: #bae6fd;
+  --tag-background: #263241;
+  --tag-text: #e2e8f0;
+  --button-background: #f8fafc;
+  --button-text: #111827;
+  --disabled-background: #1e293b;
+  --disabled-text: #64748b;
+  --placeholder-start: #1f2937;
+  --placeholder-end: #334155;
+  --theme-toggle-background: #1b2130;
+  --theme-toggle-hover-background: #222a3b;
+  --theme-toggle-icon: #f8fafc;
+  color-scheme: dark;
 }
 
 html,
@@ -14,16 +61,5 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   min-height: 100vh;
-}
-
-html {
-  color-scheme: light only;
-}
-
-* {
-  color-scheme: light only;
-}
-
-a:hover {
-  opacity: 0.8;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }

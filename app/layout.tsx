@@ -15,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="light" style={{ colorScheme: 'light' }}>
-      <body className={`${manrope.className} bg-white text-gray-900 antialiased`} style={{ backgroundColor: '#ffffff' }}>
+    <html lang="en">
+      <body className={`${manrope.className} antialiased`}>
         {children}
       </body>
     </html>

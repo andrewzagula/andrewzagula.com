@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import {
   FaEnvelope,
@@ -9,13 +9,43 @@ import {
   FaInstagram,
   FaLinkedin,
 } from 'react-icons/fa6';
-import { LuGlobe } from 'react-icons/lu';
+import { LuGlobe, LuMoon, LuSun } from 'react-icons/lu';
 import { TypeAnimation } from 'react-type-animation';
 import styles from './page.module.css';
 import { projects } from './projects';
 
 export default function Home() {
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [themeLoaded, setThemeLoaded] = useState(false);
+
+  useEffect(() => {
+    const storedTheme = window.localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const preferredTheme = storedTheme === 'light' || storedTheme === 'dark'
+      ? storedTheme
+      : prefersDark
+        ? 'dark'
+        : 'light';
+
+    const frameId = window.requestAnimationFrame(() => {
+      setTheme(preferredTheme);
+      setThemeLoaded(true);
+    });
+
+    return () => window.cancelAnimationFrame(frameId);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+
+    if (themeLoaded) {
+      window.localStorage.setItem('theme', theme);
+    }
+  }, [theme, themeLoaded]);
+
+  const isDarkMode = theme === 'dark';
 
   const toggleItem = (itemId: string) => {
     setExpandedItems(prev => {
@@ -29,20 +59,40 @@ export default function Home() {
     });
   };
 
+  const toggleTheme = () => {
+    setTheme(currentTheme => currentTheme === 'dark' ? 'light' : 'dark');
+  };
+
   return (
-    <main className={styles.main}>
+    <main className={styles.main} data-theme={theme}>
       <div className={styles.container}>
         <section className={styles.heroSection}>
-          <h1 className={styles.heroTitle}>
-            <TypeAnimation
-              sequence={["Hi, I'm Andrew 👋", 2000]}
-              wrapper="span"
-              speed={25}
-              cursor={true}
-              repeat={0}
-              className={styles.heroTypewriter}
-            />
-          </h1>
+          <div className={styles.heroHeader}>
+            <h1 className={styles.heroTitle}>
+              <TypeAnimation
+                sequence={["Hi, I'm Andrew 👋", 2000]}
+                wrapper="span"
+                speed={25}
+                cursor={true}
+                repeat={0}
+                className={styles.heroTypewriter}
+              />
+            </h1>
+            <button
+              type="button"
+              className={styles.themeToggle}
+              onClick={toggleTheme}
+              aria-label={isDarkMode ? 'Current theme: dark. Switch to light mode' : 'Current theme: light. Switch to dark mode'}
+              aria-pressed={isDarkMode}
+              title={isDarkMode ? 'Current theme: dark. Switch to light mode' : 'Current theme: light. Switch to dark mode'}
+            >
+              {isDarkMode ? (
+                <LuMoon className={styles.themeToggleIcon} aria-hidden="true" />
+              ) : (
+                <LuSun className={styles.themeToggleIcon} aria-hidden="true" />
+              )}
+            </button>
+          </div>
           <p className={styles.heroDescription}>
             I&apos;m an incoming freshman at Caltech studying computer science, interested in AI research, product development, & quantitative engineering.
           </p>
