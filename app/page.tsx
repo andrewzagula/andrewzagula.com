@@ -361,7 +361,7 @@ export default function Home() {
               <div className={styles.item} onClick={() => toggleItem('edu-2')}>
                 <div className={styles.itemLogo}>
                   <Image
-                    src="/BR.png"
+                    src={isDarkMode ? "/BRDark.png" : "/BR.png"}
                     alt="Bridgewater-Raritan High School"
                     width={56} 
                     height={56} 
