@@ -38,7 +38,7 @@ export const projects: Project[] = [
   },
   {
     title: 'AUDIT',
-    description: 'AI-powered CLI security scanner for detecting vulnerabilities in local code repositories',
+    description: 'AI-powered security scanner for detecting vulnerabilities in local code repositories',
     tech: ['Python', 'OpenAI API', 'Typer', 'Pydantic', 'SQLite', 'ChromaDB', 'PyInstaller', 'Node.js'],
     actions: [
       { kind: 'source', label: 'Source', href: 'https://github.com/AryaVaidya08/AUDIT' },
