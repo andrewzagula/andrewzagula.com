@@ -399,7 +399,7 @@ export default function Home() {
                   <p className={styles.itemDescription}>
                     GPA: 5.0 (Salutatorian)
                     <br /><br />
-                    Activities and societies: Boys&apos; Varsity Volleyball; DECA Club; Key Club
+                    Activities and societies: Boys&apos; Varsity Volleyball, DECA, Key Club
                     <br /><br />
                     Calculus III, Differential Equations, Linear Algebra, AP Calculus BC, AP Physics C, AP Chemistry, AP Biology, AP Computer Science A, Data Structures (Rutgers University)
                   </p>
