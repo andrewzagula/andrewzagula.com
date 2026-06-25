@@ -246,7 +246,7 @@ export default function Home() {
               {expandedItems.has('work-2') && (
                 <div className={styles.itemDetails}>
                   <p className={styles.itemDescription}>
-                    Adaptive adversarial prompting for multi-turn LLM jailbreaking (first-author at NeurIPS 2025 Lock-LLM)
+                    Adversarial prompting for multi-turn LLM jailbreaking (first-author at NeurIPS 2025 Lock-LLM)
                   </p>
                   <a href="https://arxiv.org/abs/2511.02376" target="_blank" rel="noopener noreferrer" className={styles.arxivLink}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -300,7 +300,7 @@ export default function Home() {
               {expandedItems.has('work-1') && (
                 <div className={styles.itemDetails}>
                   <p className={styles.itemDescription}>
-                    Pre-training & benchmarking sample-efficient vision language models (co-author at CVPR 2026)
+                    Benchmarking sample-efficient vision language models (co-author at CVPR 2026)
                   </p>
                   <div className={styles.itemLinks}>
                     <a href="https://arxiv.org/abs/2512.10932" target="_blank" rel="noopener noreferrer" className={styles.arxivLink}>
