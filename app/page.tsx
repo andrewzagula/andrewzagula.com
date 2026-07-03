@@ -418,7 +418,7 @@ export default function Home() {
                 <div className={styles.itemContent}>
                   <div>
                     <h3 className={styles.itemTitle}>2x USA Mathematical Olympiad Qualifier</h3>
-                    <p className={styles.itemSubtitle}>139.5 AMC 12; 13 AIME</p>
+                    <p className={styles.itemSubtitle}>139.5 AMC 12, 13 AIME</p>
                   </div>
                   <div className={styles.itemRight}>
                     <span className={styles.itemDate}>2025 - 2026</span>
@@ -434,7 +434,7 @@ export default function Home() {
                 <div className={styles.itemContent}>
                   <div>
                     <h3 className={styles.itemTitle}>5x AIME Qualifier</h3>
-                    <p className={styles.itemSubtitle}>1x Distinguished Honor Roll (top 1%); 4x Honor Roll (top 5%)</p>
+                    <p className={styles.itemSubtitle}>1x Distinguished Honor Roll, 4x Honor Roll</p>
                   </div>
                   <div className={styles.itemRight}>
                     <span className={styles.itemDate}>2021 - 2025</span>
