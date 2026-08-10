@@ -13,33 +13,50 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: 'Walkthru',
+    description: 'Knowledge check for code you ship ($1K winner at NY Tech Week)',
+    tech: ['TypeScript', 'Next.js', 'React', 'Vercel AI SDK', 'Anthropic API', 'PostgreSQL', 'Tailwind CSS', 'Node.js', 'Vercel'],
+    actions: [
+      { kind: 'source', label: 'Source', href: 'https://github.com/andrewzagula/Walkthru' },
+      { kind: 'website', label: 'Website', href: 'https://trywalkthru.vercel.app/' },
+    ],
+  },
+  {
+    title: 'Eidola',
+    description: 'Multimodal knowledge base for your life',
+    tech: ['TypeScript', 'Python', 'Next.js', 'React', 'FastAPI', 'Supabase', 'pgvector', 'Gemini API', 'Anthropic API', 'Stripe', 'Tailwind CSS', 'Docker'],
+    actions: [
+      { kind: 'website', label: 'Website', href: 'https://eidola.me' },
+    ],
+  },
+  {
+    title: 'Alumhub',
+    description: 'Student-alumni social networking platform',
+    tech: ['JavaScript', 'CSS', 'Next.js', 'React', 'Firebase', 'Stripe', 'OpenAI API', 'Node.js', 'Vercel'],
+    actions: [
+      { kind: 'website', label: 'Website', href: 'https://thealumhub.com' },
+    ],
+  },
+  {
     title: 'PaperTrail',
-    description: 'AI research assistant for discovering, understanding, and building on academic papers',
-    tech: ['Python', 'TypeScript', 'FastAPI', 'Next.js', 'React', 'OpenAI API', 'LangChain', 'LangGraph', 'SQLite', 'SQLAlchemy', 'ChromaDB', 'Tailwind CSS', 'Pydantic'],
+    description: 'Research assistant for scientific literature',
+    tech: ['Python', 'TypeScript', 'FastAPI', 'Next.js', 'React', 'LangChain', 'LangGraph', 'OpenAI API', 'ChromaDB', 'SQLite', 'Tailwind CSS'],
     actions: [
       { kind: 'source', label: 'Source', href: 'https://github.com/andrewzagula/PaperTrail' },
     ],
   },
   {
     title: 'Rewind',
-    description: 'AI-native research platform for developing and simulating quantitative trading strategies',
-    tech: ['Python', 'FastAPI', 'Next.js', 'TypeScript', 'OpenAI API', 'DuckDB', 'PostgreSQL', 'Redis', 'Polars', 'NumPy', 'Plotly', 'SQLAlchemy', 'Pydantic', 'Tailwind CSS', 'Docker'],
+    description: 'Quantitative trading research platform',
+    tech: ['Python', 'TypeScript', 'FastAPI', 'Next.js', 'React', 'OpenAI API', 'PostgreSQL', 'Redis', 'DuckDB', 'pandas', 'Tailwind CSS', 'Docker'],
     actions: [
       { kind: 'source', label: 'Source', href: 'https://github.com/andrewzagula/Rewind' },
     ],
   },
   {
-    title: 'AutoAdv',
-    description: 'Adaptive adversarial prompting framework for black-box multi-turn LLM jailbreaking',
-    tech: ['Python', 'OpenAI API', 'Together AI API', 'xAI API'],
-    actions: [
-      { kind: 'source', label: 'Source', href: 'https://github.com/AAN-AutoAdv/AutoAdv' },
-    ],
-  },
-  {
     title: 'AUDIT',
-    description: 'AI-powered security scanner for detecting vulnerabilities in local code repositories',
-    tech: ['Python', 'OpenAI API', 'Typer', 'Pydantic', 'SQLite', 'ChromaDB', 'PyInstaller', 'Node.js'],
+    description: 'Vulnerability scanner for codebases',
+    tech: ['Python', 'OpenAI API', 'Typer', 'ChromaDB', 'SQLite', 'PyInstaller', 'Node.js'],
     actions: [
       { kind: 'source', label: 'Source', href: 'https://github.com/AryaVaidya08/AUDIT' },
     ],

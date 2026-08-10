@@ -6,7 +6,6 @@ import {
   FaEnvelope,
   FaFileLines,
   FaGithub,
-  FaInstagram,
   FaLinkedin,
 } from 'react-icons/fa6';
 import { LuGlobe, LuMoon, LuSun } from 'react-icons/lu';
@@ -94,7 +93,7 @@ export default function Home() {
             </button>
           </div>
           <p className={styles.heroDescription}>
-            I&apos;m an incoming freshman at Caltech studying computer science, interested in AI research, product development, & quantitative engineering.
+            I&apos;m a freshman at Caltech studying computer science with a minor in robotics.
           </p>
           <div className={styles.heroSocials}>
             <a
@@ -135,16 +134,6 @@ export default function Home() {
               <FaLinkedin className={styles.heroSocialIcon} />
               <span className={styles.heroSocialLabel}>LinkedIn</span>
             </a>
-            <a
-              href="https://www.instagram.com/andrewzagulaa/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.heroSocialLink}
-              aria-label="Instagram"
-            >
-              <FaInstagram className={styles.heroSocialIcon} />
-              <span className={styles.heroSocialLabel}>Instagram</span>
-            </a>
           </div>
         </section>
 
@@ -155,11 +144,11 @@ export default function Home() {
             <div className={styles.itemContainer}>
               <div className={styles.item} onClick={() => toggleItem('work-4')}>
                 <div className={styles.itemLogo}>
-                  <Image 
-                    src="/AH.png" 
-                    alt="Alumhub" 
-                    width={56} 
-                    height={56} 
+                  <Image
+                    src="/FD.png"
+                    alt="FinalDose"
+                    width={56}
+                    height={56}
                     className={styles.itemLogoImage}
                     quality={100}
                     unoptimized
@@ -167,21 +156,21 @@ export default function Home() {
                 </div>
                 <div className={styles.itemContent}>
                   <div>
-                    <h3 className={styles.itemTitle}>Alumhub</h3>
-                    <p className={styles.itemSubtitle}>Co-Founder</p>
+                    <h3 className={styles.itemTitle}>FinalDose</h3>
+                    <p className={styles.itemSubtitle}>Software Engineer</p>
                   </div>
                   <div className={styles.itemRight}>
-                    <span className={styles.itemDate}>Jan 2025 - Mar 2026</span>
-                    <svg 
+                    <span className={styles.itemDate}>Aug 2026 - Present</span>
+                    <svg
                       className={`${styles.chevron} ${expandedItems.has('work-4') ? styles.chevronExpanded : ''}`}
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="20" 
-                      height="20" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
                       strokeLinejoin="round"
                     >
                       <polyline points="6 9 12 15 18 9"></polyline>
@@ -192,16 +181,54 @@ export default function Home() {
               {expandedItems.has('work-4') && (
                 <div className={styles.itemDetails}>
                   <p className={styles.itemDescription}>
-                    Student-alumni social networking platform backed by Google, Vercel, Stripe, and others
+                    Programmable cancer elimination (YC P26)
                   </p>
-                  <a href="https://thealumhub.com" target="_blank" rel="noopener noreferrer" className={styles.arxivLink}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                </div>
+              )}
+            </div>
+
+            <div className={styles.itemContainer}>
+              <div className={styles.item} onClick={() => toggleItem('work-5')}>
+                <div className={styles.itemLogo}>
+                  <Image
+                    src="/TX.png"
+                    alt="Terranox AI"
+                    width={56}
+                    height={56}
+                    className={styles.itemLogoImage}
+                    quality={100}
+                    unoptimized
+                  />
+                </div>
+                <div className={styles.itemContent}>
+                  <div>
+                    <h3 className={styles.itemTitle}>Terranox AI</h3>
+                    <p className={styles.itemSubtitle}>Software Engineer</p>
+                  </div>
+                  <div className={styles.itemRight}>
+                    <span className={styles.itemDate}>Jun 2026 - Aug 2026</span>
+                    <svg
+                      className={`${styles.chevron} ${expandedItems.has('work-5') ? styles.chevronExpanded : ''}`}
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
-                    Website
-                  </a>
+                  </div>
+                </div>
+              </div>
+              {expandedItems.has('work-5') && (
+                <div className={styles.itemDetails}>
+                  <p className={styles.itemDescription}>
+                    AI-powered uranium discovery (YC W26)
+                  </p>
                 </div>
               )}
             </div>
@@ -246,16 +273,26 @@ export default function Home() {
               {expandedItems.has('work-2') && (
                 <div className={styles.itemDetails}>
                   <p className={styles.itemDescription}>
-                    Adversarial prompting for multi-turn LLM jailbreaking (first-author at NeurIPS 2025 Lock-LLM)
+                    LLM jailbreaking (first-author NeurIPS 2025 Lock-LLM)
                   </p>
-                  <a href="https://arxiv.org/abs/2511.02376" target="_blank" rel="noopener noreferrer" className={styles.arxivLink}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    arXiv
-                  </a>
+                  <div className={styles.itemLinks}>
+                    <a href="https://arxiv.org/abs/2511.02376" target="_blank" rel="noopener noreferrer" className={styles.arxivLink}>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                      arXiv
+                    </a>
+                    <a href="https://github.com/AAN-AutoAdv/AutoAdv" target="_blank" rel="noopener noreferrer" className={styles.arxivLink}>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                      Source
+                    </a>
+                  </div>
                 </div>
               )}
             </div>
@@ -300,7 +337,7 @@ export default function Home() {
               {expandedItems.has('work-1') && (
                 <div className={styles.itemDetails}>
                   <p className={styles.itemDescription}>
-                    Benchmarking sample-efficient vision language models (co-author at CVPR 2026)
+                    VLM benchmarking (co-author CVPR 2026)
                   </p>
                   <div className={styles.itemLinks}>
                     <a href="https://arxiv.org/abs/2512.10932" target="_blank" rel="noopener noreferrer" className={styles.arxivLink}>
@@ -348,7 +385,7 @@ export default function Home() {
                 <div className={styles.itemContent}>
                   <div>
                     <h3 className={styles.itemTitle}>California Institute of Technology</h3>
-                    <p className={styles.itemSubtitle}>B.S. in Computer Science</p>
+                    <p className={styles.itemSubtitle}>B.S. in Computer Science, Minor in Robotics</p>
                   </div>
                   <div className={styles.itemRight}>
                     <span className={styles.itemDate}>Sep 2026 - Jun 2030</span>
@@ -397,7 +434,7 @@ export default function Home() {
               {expandedItems.has('edu-2') && (
                 <div className={styles.itemDetails}>
                   <p className={styles.itemDescription}>
-                    GPA: 5.0 (Salutatorian)
+                    Grade: Salutatorian
                     <br /><br />
                     Activities and societies: Boys&apos; Varsity Volleyball, DECA, Key Club
                     <br /><br />
@@ -434,7 +471,6 @@ export default function Home() {
                 <div className={styles.itemContent}>
                   <div>
                     <h3 className={styles.itemTitle}>5x AIME Qualifier</h3>
-                    <p className={styles.itemSubtitle}>1x Distinguished Honor Roll, 4x Honor Roll</p>
                   </div>
                   <div className={styles.itemRight}>
                     <span className={styles.itemDate}>2021 - 2025</span>
@@ -452,7 +488,7 @@ export default function Home() {
                     <h3 className={styles.itemTitle}>USA Computing Olympiad Gold</h3>
                   </div>
                   <div className={styles.itemRight}>
-                    <span className={styles.itemDate}>Dec 2023</span>
+                    <span className={styles.itemDate}>2023</span>
                   </div>
                 </div>
               </div>
