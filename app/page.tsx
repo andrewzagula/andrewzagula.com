@@ -151,7 +151,6 @@ export default function Home() {
                     height={56}
                     className={styles.itemLogoImage}
                     quality={100}
-                    unoptimized
                   />
                 </div>
                 <div className={styles.itemContent}>
@@ -197,7 +196,6 @@ export default function Home() {
                     height={56}
                     className={styles.itemLogoImage}
                     quality={100}
-                    unoptimized
                   />
                 </div>
                 <div className={styles.itemContent}>
@@ -243,7 +241,6 @@ export default function Home() {
                     height={56} 
                     className={styles.itemLogoImage}
                     quality={100}
-                    unoptimized
                   />
                 </div>
                 <div className={styles.itemContent}>
@@ -307,7 +304,6 @@ export default function Home() {
                     height={56} 
                     className={styles.itemLogoImage}
                     quality={100}
-                    unoptimized
                   />
                 </div>
                 <div className={styles.itemContent}>
@@ -379,7 +375,6 @@ export default function Home() {
                     height={56}
                     className={styles.itemLogoImage}
                     quality={100}
-                    unoptimized
                   />
                 </div>
                 <div className={styles.itemContent}>
@@ -404,7 +399,6 @@ export default function Home() {
                     height={56} 
                     className={styles.itemLogoImage}
                     quality={100}
-                    unoptimized
                   />
                 </div>
                 <div className={styles.itemContent}>
