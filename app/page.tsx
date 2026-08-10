@@ -147,8 +147,8 @@ export default function Home() {
                   <Image
                     src="/FD.png"
                     alt="FinalDose"
-                    width={56}
-                    height={56}
+                    width={224}
+                    height={224}
                     className={styles.itemLogoImage}
                     quality={100}
                   />
@@ -192,8 +192,8 @@ export default function Home() {
                   <Image
                     src="/TX.png"
                     alt="Terranox AI"
-                    width={56}
-                    height={56}
+                    width={224}
+                    height={224}
                     className={styles.itemLogoImage}
                     quality={100}
                   />
@@ -237,8 +237,8 @@ export default function Home() {
                   <Image 
                     src="/UCB.png" 
                     alt="UC Berkeley" 
-                    width={56} 
-                    height={56} 
+                    width={224}
+                    height={224}
                     className={styles.itemLogoImage}
                     quality={100}
                   />
@@ -300,8 +300,8 @@ export default function Home() {
                   <Image 
                     src="/BU.png" 
                     alt="Boston University" 
-                    width={56} 
-                    height={56} 
+                    width={224}
+                    height={224}
                     className={styles.itemLogoImage}
                     quality={100}
                   />
@@ -371,8 +371,8 @@ export default function Home() {
                   <Image
                     src="/CT.png"
                     alt="California Institute of Technology"
-                    width={56}
-                    height={56}
+                    width={224}
+                    height={224}
                     className={styles.itemLogoImage}
                     quality={100}
                   />
@@ -395,8 +395,8 @@ export default function Home() {
                   <Image
                     src={isDarkMode ? "/BRDark.png" : "/BR.png"}
                     alt="Bridgewater-Raritan High School"
-                    width={56} 
-                    height={56} 
+                    width={224}
+                    height={224}
                     className={styles.itemLogoImage}
                     quality={100}
                   />
