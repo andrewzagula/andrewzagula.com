@@ -57,6 +57,26 @@
   height: 18px;
 }
 
+/* Theme-dependent content: render both variants, let CSS pick one, so nothing
+   depends on React state and everything is correct on the first paint.
+   display:none also drops the unused variant from the accessibility tree. */
+:root[data-theme="dark"] .lightOnly,
+:root:not([data-theme="dark"]) .darkOnly {
+  display: none;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 .heroTitle {
   flex: 1;
   font-size: 48px;
@@ -64,9 +84,21 @@
   margin: 0;
   color: var(--foreground);
   min-width: 0;
+  display: grid;
 }
 
-.heroTypewriter::after {
+/* Stack the placeholder and the typewriter in the same cell, so the taller of
+   the two sets the height and the headline never changes size as it types. */
+.heroTitle > * {
+  grid-area: 1 / 1;
+}
+
+.heroTitlePlaceholder {
+  visibility: hidden;
+}
+
+.heroTypewriter::after,
+.heroTypewriterCursor {
   font-weight: 200;
   margin-left: 0.5rem;
 }

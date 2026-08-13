@@ -13,38 +13,38 @@ import Item, { ExternalLink } from './Item';
 import styles from './page.module.css';
 import { projects } from './projects';
 
+type Theme = 'light' | 'dark';
+
 export default function Home() {
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  const [themeLoaded, setThemeLoaded] = useState(false);
-
-  useEffect(() => {
-    const storedTheme = window.localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const preferredTheme = storedTheme === 'light' || storedTheme === 'dark'
-      ? storedTheme
-      : prefersDark
-        ? 'dark'
-        : 'light';
-
-    const frameId = window.requestAnimationFrame(() => {
-      setTheme(preferredTheme);
-      setThemeLoaded(true);
-    });
-
-    return () => window.cancelAnimationFrame(frameId);
-  }, []);
+  // The inline script in layout.tsx has already resolved the theme onto <html>,
+  // so read it back instead of guessing and correcting after paint.
+  const [theme, setTheme] = useState<Theme>(() =>
+    typeof document === 'undefined'
+      ? 'light'
+      : document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light'
+  );
+  const [choseExplicitly, setChoseExplicitly] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    const stored = window.localStorage.getItem('theme');
+    return stored === 'light' || stored === 'dark';
+  });
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
     document.documentElement.style.colorScheme = theme;
+  }, [theme]);
 
-    if (themeLoaded) {
-      window.localStorage.setItem('theme', theme);
-    }
-  }, [theme, themeLoaded]);
+  // Keep following the OS until the visitor picks a theme themselves.
+  useEffect(() => {
+    if (choseExplicitly) return;
 
-  const isDarkMode = theme === 'dark';
+    const query = window.matchMedia('(prefers-color-scheme: dark)');
+    const sync = () => setTheme(query.matches ? 'dark' : 'light');
+
+    query.addEventListener('change', sync);
+    return () => query.removeEventListener('change', sync);
+  }, [choseExplicitly]);
 
   const toggleItem = (itemId: string) => {
     setExpandedItems(prev => {
@@ -59,15 +59,27 @@ export default function Home() {
   };
 
   const toggleTheme = () => {
-    setTheme(currentTheme => currentTheme === 'dark' ? 'light' : 'dark');
+    setTheme(currentTheme => {
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      window.localStorage.setItem('theme', nextTheme);
+      return nextTheme;
+    });
+    setChoseExplicitly(true);
   };
 
   return (
-    <main className={styles.main} data-theme={theme}>
+    <main className={styles.main}>
       <div className={styles.container}>
         <section className={styles.heroSection}>
           <div className={styles.heroHeader}>
             <h1 className={styles.heroTitle}>
+              {/* Hidden copy of the finished headline. It reserves the exact
+                  height the typewriter will end up needing — including the
+                  emoji's taller line box and any wrapping on narrow screens —
+                  so the page doesn't shift down as the text types in. */}
+              <span className={styles.heroTitlePlaceholder} aria-hidden="true">
+                Hi, I&apos;m Andrew 👋<span className={styles.heroTypewriterCursor}>|</span>
+              </span>
               <TypeAnimation
                 sequence={["Hi, I'm Andrew 👋", 2000]}
                 wrapper="span"
@@ -77,19 +89,22 @@ export default function Home() {
                 className={styles.heroTypewriter}
               />
             </h1>
+            {/* Both states are rendered and swapped by CSS so the button is
+                already correct on the first paint, before React hydrates. */}
             <button
               type="button"
               className={styles.themeToggle}
               onClick={toggleTheme}
-              aria-label={isDarkMode ? 'Current theme: dark. Switch to light mode' : 'Current theme: light. Switch to dark mode'}
-              aria-pressed={isDarkMode}
-              title={isDarkMode ? 'Current theme: dark. Switch to light mode' : 'Current theme: light. Switch to dark mode'}
+              title="Toggle theme"
             >
-              {isDarkMode ? (
-                <LuMoon className={styles.themeToggleIcon} aria-hidden="true" />
-              ) : (
-                <LuSun className={styles.themeToggleIcon} aria-hidden="true" />
-              )}
+              <LuSun className={`${styles.themeToggleIcon} ${styles.lightOnly}`} aria-hidden="true" />
+              <LuMoon className={`${styles.themeToggleIcon} ${styles.darkOnly}`} aria-hidden="true" />
+              <span className={`${styles.srOnly} ${styles.lightOnly}`}>
+                Current theme: light. Switch to dark mode
+              </span>
+              <span className={`${styles.srOnly} ${styles.darkOnly}`}>
+                Current theme: dark. Switch to light mode
+              </span>
             </button>
           </div>
           <p className={styles.heroDescription}>
@@ -221,7 +236,8 @@ export default function Home() {
             />
 
             <Item
-              logoSrc={isDarkMode ? "/BRDark.png" : "/BR.png"}
+              logoSrc="/BR.png"
+              logoSrcDark="/BRDark.png"
               logoAlt="Bridgewater-Raritan High School"
               title="Bridgewater-Raritan High School"
               subtitle="High School Diploma"

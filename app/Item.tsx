@@ -9,6 +9,7 @@ type ItemProps = {
   date?: string;
   subtitle?: string;
   logoSrc?: string;
+  logoSrcDark?: string;
   logoAlt?: string;
   expanded?: boolean;
   onToggle?: () => void;
@@ -20,6 +21,7 @@ export default function Item({
   date,
   subtitle,
   logoSrc,
+  logoSrcDark,
   logoAlt,
   expanded = false,
   onToggle,
@@ -49,9 +51,19 @@ export default function Item({
               alt={logoAlt ?? ''}
               width={224}
               height={224}
-              className={styles.itemLogoImage}
+              className={`${styles.itemLogoImage} ${logoSrcDark ? styles.lightOnly : ''}`}
               quality={100}
             />
+            {logoSrcDark && (
+              <Image
+                src={logoSrcDark}
+                alt={logoAlt ?? ''}
+                width={224}
+                height={224}
+                className={`${styles.itemLogoImage} ${styles.darkOnly}`}
+                quality={100}
+              />
+            )}
           </div>
         )}
         <div className={styles.itemContent}>
