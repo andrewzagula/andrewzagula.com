@@ -188,6 +188,10 @@
   transition: border-color 0.2s ease;
 }
 
+.itemStatic {
+  cursor: default;
+}
+
 .itemRight {
   display: flex;
   align-items: center;
@@ -199,28 +203,34 @@
   color: var(--faint);
   transition: transform 0.3s ease, color 0.2s ease;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 .chevronExpanded {
   transform: rotate(180deg);
 }
 
+.itemDetailsWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.3s ease, opacity 0.2s ease;
+}
+
+.itemDetailsWrapperOpen {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.itemDetailsClip {
+  overflow: hidden;
+  min-height: 0;
+}
+
 .itemDetails {
   padding: 20px;
   padding-top: 0;
   border-radius: 8px;
-  animation: slideDown 0.3s ease-out;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .itemDescription {
@@ -394,6 +404,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 12px;
   margin-bottom: 8px;
 }
 
@@ -417,7 +428,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 16px;
 }
 
 .techTag {
@@ -431,38 +441,45 @@
 
 .projectLinks {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  gap: 4px;
+  flex-shrink: 0;
+  margin-right: -3px;
 }
 
 .projectLink,
 .projectLinkDisabled {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
 }
 
 .projectLink {
-  background-color: var(--button-background);
-  color: var(--button-text);
+  color: var(--faint);
   text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.projectLink:hover {
+  color: var(--foreground);
+}
+
+.projectLink:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
 }
 
 .projectLinkDisabled {
-  background-color: var(--disabled-background);
   color: var(--disabled-text);
-  border: 1px solid var(--border);
   cursor: not-allowed;
 }
 
 .projectLink svg,
 .projectLinkDisabled svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
 }
 
@@ -537,4 +554,14 @@
     padding-bottom: 48px;
   }
 
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .itemDetailsWrapper {
+    transition: opacity 0.2s ease;
+  }
+
+  .chevron {
+    transition: color 0.2s ease;
+  }
 }

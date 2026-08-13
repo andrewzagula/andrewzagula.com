@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import {
   FaEnvelope,
   FaFileLines,
@@ -10,6 +9,7 @@ import {
 } from 'react-icons/fa6';
 import { LuGlobe, LuMoon, LuSun } from 'react-icons/lu';
 import { TypeAnimation } from 'react-type-animation';
+import Item, { ExternalLink } from './Item';
 import styles from './page.module.css';
 import { projects } from './projects';
 
@@ -141,221 +141,69 @@ export default function Home() {
           <h2 className={styles.sectionTitleLarge}>Experience</h2>
           
           <div className={styles.itemList}>
-            <div className={styles.itemContainer}>
-              <div className={styles.item} onClick={() => toggleItem('work-4')}>
-                <div className={styles.itemLogo}>
-                  <Image
-                    src="/FD.png"
-                    alt="FinalDose"
-                    width={224}
-                    height={224}
-                    className={styles.itemLogoImage}
-                    quality={100}
-                  />
-                </div>
-                <div className={styles.itemContent}>
-                  <div>
-                    <h3 className={styles.itemTitle}>FinalDose</h3>
-                    <p className={styles.itemSubtitle}>Software Engineer</p>
-                  </div>
-                  <div className={styles.itemRight}>
-                    <span className={styles.itemDate}>Aug 2026 - Present</span>
-                    <svg
-                      className={`${styles.chevron} ${expandedItems.has('work-4') ? styles.chevronExpanded : ''}`}
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              {expandedItems.has('work-4') && (
-                <div className={styles.itemDetails}>
-                  <p className={styles.itemDescription}>
-                    Programmable cancer elimination (YC P26)
-                  </p>
-                </div>
-              )}
-            </div>
+            <Item
+              logoSrc="/FD.png"
+              logoAlt="FinalDose"
+              title="FinalDose"
+              subtitle="Software Engineer"
+              date="Aug 2026 - Present"
+              expanded={expandedItems.has('work-4')}
+              onToggle={() => toggleItem('work-4')}
+            >
+              <p className={styles.itemDescription}>
+                Programmable cancer elimination (YC P26)
+              </p>
+            </Item>
 
-            <div className={styles.itemContainer}>
-              <div className={styles.item} onClick={() => toggleItem('work-5')}>
-                <div className={styles.itemLogo}>
-                  <Image
-                    src="/TX.png"
-                    alt="Terranox AI"
-                    width={224}
-                    height={224}
-                    className={styles.itemLogoImage}
-                    quality={100}
-                  />
-                </div>
-                <div className={styles.itemContent}>
-                  <div>
-                    <h3 className={styles.itemTitle}>Terranox AI</h3>
-                    <p className={styles.itemSubtitle}>Software Engineer</p>
-                  </div>
-                  <div className={styles.itemRight}>
-                    <span className={styles.itemDate}>Jun 2026 - Aug 2026</span>
-                    <svg
-                      className={`${styles.chevron} ${expandedItems.has('work-5') ? styles.chevronExpanded : ''}`}
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              {expandedItems.has('work-5') && (
-                <div className={styles.itemDetails}>
-                  <p className={styles.itemDescription}>
-                    AI-powered uranium discovery (YC W26)
-                  </p>
-                </div>
-              )}
-            </div>
+            <Item
+              logoSrc="/TX.png"
+              logoAlt="Terranox AI"
+              title="Terranox AI"
+              subtitle="Software Engineer"
+              date="Jun 2026 - Aug 2026"
+              expanded={expandedItems.has('work-5')}
+              onToggle={() => toggleItem('work-5')}
+            >
+              <p className={styles.itemDescription}>
+                AI-powered uranium discovery (YC W26)
+              </p>
+            </Item>
 
-            <div className={styles.itemContainer}>
-              <div className={styles.item} onClick={() => toggleItem('work-2')}>
-                <div className={styles.itemLogo}>
-                  <Image 
-                    src="/UCB.png" 
-                    alt="UC Berkeley" 
-                    width={224}
-                    height={224}
-                    className={styles.itemLogoImage}
-                    quality={100}
-                  />
-                </div>
-                <div className={styles.itemContent}>
-                  <div>
-                    <h3 className={styles.itemTitle}>University of California, Berkeley</h3>
-                    <p className={styles.itemSubtitle}>Student Researcher</p>
-                  </div>
-                  <div className={styles.itemRight}>
-                    <span className={styles.itemDate}>Jul 2024 - Dec 2025</span>
-                    <svg 
-                      className={`${styles.chevron} ${expandedItems.has('work-2') ? styles.chevronExpanded : ''}`}
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="20" 
-                      height="20" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                  </div>
-                </div>
+            <Item
+              logoSrc="/UCB.png"
+              logoAlt="UC Berkeley"
+              title="University of California, Berkeley"
+              subtitle="Student Researcher"
+              date="Jul 2024 - Dec 2025"
+              expanded={expandedItems.has('work-2')}
+              onToggle={() => toggleItem('work-2')}
+            >
+              <p className={styles.itemDescription}>
+                LLM jailbreaking (first-author NeurIPS 2025 Lock-LLM)
+              </p>
+              <div className={styles.itemLinks}>
+                <ExternalLink href="https://arxiv.org/abs/2511.02376">arXiv</ExternalLink>
+                <ExternalLink href="https://github.com/AAN-AutoAdv/AutoAdv">Source</ExternalLink>
               </div>
-              {expandedItems.has('work-2') && (
-                <div className={styles.itemDetails}>
-                  <p className={styles.itemDescription}>
-                    LLM jailbreaking (first-author NeurIPS 2025 Lock-LLM)
-                  </p>
-                  <div className={styles.itemLinks}>
-                    <a href="https://arxiv.org/abs/2511.02376" target="_blank" rel="noopener noreferrer" className={styles.arxivLink}>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                      </svg>
-                      arXiv
-                    </a>
-                    <a href="https://github.com/AAN-AutoAdv/AutoAdv" target="_blank" rel="noopener noreferrer" className={styles.arxivLink}>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                      </svg>
-                      Source
-                    </a>
-                  </div>
-                </div>
-              )}
-            </div>
+            </Item>
 
-            <div className={styles.itemContainer}>
-              <div className={styles.item} onClick={() => toggleItem('work-1')}>
-                <div className={styles.itemLogo}>
-                  <Image 
-                    src="/BU.png" 
-                    alt="Boston University" 
-                    width={224}
-                    height={224}
-                    className={styles.itemLogoImage}
-                    quality={100}
-                  />
-                </div>
-                <div className={styles.itemContent}>
-                  <div>
-                    <h3 className={styles.itemTitle}>Boston University</h3>
-                    <p className={styles.itemSubtitle}>Research Intern (RISE)</p>
-                  </div>
-                  <div className={styles.itemRight}>
-                    <span className={styles.itemDate}>Jun 2025 - Aug 2025</span>
-                    <svg 
-                      className={`${styles.chevron} ${expandedItems.has('work-1') ? styles.chevronExpanded : ''}`}
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="20" 
-                      height="20" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                  </div>
-                </div>
+            <Item
+              logoSrc="/BU.png"
+              logoAlt="Boston University"
+              title="Boston University"
+              subtitle="Research Intern (RISE)"
+              date="Jun 2025 - Aug 2025"
+              expanded={expandedItems.has('work-1')}
+              onToggle={() => toggleItem('work-1')}
+            >
+              <p className={styles.itemDescription}>
+                VLM benchmarking (co-author CVPR 2026)
+              </p>
+              <div className={styles.itemLinks}>
+                <ExternalLink href="https://arxiv.org/abs/2512.10932">arXiv</ExternalLink>
+                <ExternalLink href="https://shawnking98.github.io/BabyVLM-v2/">Website</ExternalLink>
               </div>
-              {expandedItems.has('work-1') && (
-                <div className={styles.itemDetails}>
-                  <p className={styles.itemDescription}>
-                    VLM benchmarking (co-author CVPR 2026)
-                  </p>
-                  <div className={styles.itemLinks}>
-                    <a href="https://arxiv.org/abs/2512.10932" target="_blank" rel="noopener noreferrer" className={styles.arxivLink}>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                      </svg>
-                      arXiv
-                    </a>
-                    <a href="https://shawnking98.github.io/BabyVLM-v2/" target="_blank" rel="noopener noreferrer" className={styles.arxivLink}>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                      </svg>
-                      Website
-                    </a>
-                  </div>
-                </div>
-              )}
-            </div>
+            </Item>
 
           </div>
         </section>
@@ -365,78 +213,29 @@ export default function Home() {
           
           <div className={styles.itemList}>
 
-            <div className={styles.itemContainer}>
-              <div className={styles.item}>
-                <div className={styles.itemLogo}>
-                  <Image
-                    src="/CT.png"
-                    alt="California Institute of Technology"
-                    width={224}
-                    height={224}
-                    className={styles.itemLogoImage}
-                    quality={100}
-                  />
-                </div>
-                <div className={styles.itemContent}>
-                  <div>
-                    <h3 className={styles.itemTitle}>California Institute of Technology</h3>
-                    <p className={styles.itemSubtitle}>B.S. in Computer Science, Minor in Robotics</p>
-                  </div>
-                  <div className={styles.itemRight}>
-                    <span className={styles.itemDate}>Sep 2026 - Jun 2030</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Item
+              logoSrc="/CT.png"
+              logoAlt="California Institute of Technology"
+              title="California Institute of Technology"
+              subtitle="B.S. in Computer Science, Minor in Robotics"
+            />
 
-            <div className={styles.itemContainer}>
-              <div className={styles.item} onClick={() => toggleItem('edu-2')}>
-                <div className={styles.itemLogo}>
-                  <Image
-                    src={isDarkMode ? "/BRDark.png" : "/BR.png"}
-                    alt="Bridgewater-Raritan High School"
-                    width={224}
-                    height={224}
-                    className={styles.itemLogoImage}
-                    quality={100}
-                  />
-                </div>
-                <div className={styles.itemContent}>
-                  <div>
-                    <h3 className={styles.itemTitle}>Bridgewater-Raritan High School</h3>
-                    <p className={styles.itemSubtitle}>High School Diploma</p>
-                  </div>
-                  <div className={styles.itemRight}>
-                    <span className={styles.itemDate}>Sep 2022 - Jun 2026</span>
-                    <svg 
-                      className={`${styles.chevron} ${expandedItems.has('edu-2') ? styles.chevronExpanded : ''}`}
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="20" 
-                      height="20" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              {expandedItems.has('edu-2') && (
-                <div className={styles.itemDetails}>
-                  <p className={styles.itemDescription}>
-                    Grade: Salutatorian
-                    <br /><br />
-                    Activities and societies: Boys&apos; Varsity Volleyball, DECA, Key Club
-                    <br /><br />
-                    Calculus III, Differential Equations, Linear Algebra, AP Calculus BC, AP Physics C, AP Chemistry, AP Biology, AP Computer Science A, Data Structures (Rutgers University)
-                  </p>
-                </div>
-              )}
-            </div>
+            <Item
+              logoSrc={isDarkMode ? "/BRDark.png" : "/BR.png"}
+              logoAlt="Bridgewater-Raritan High School"
+              title="Bridgewater-Raritan High School"
+              subtitle="High School Diploma"
+              expanded={expandedItems.has('edu-2')}
+              onToggle={() => toggleItem('edu-2')}
+            >
+              <p className={styles.itemDescription}>
+                Grade: Salutatorian
+                <br /><br />
+                Activities and societies: Boys&apos; Varsity Volleyball, DECA, Key Club
+                <br /><br />
+                Calculus III, Differential Equations, Linear Algebra, AP Calculus BC, AP Physics C, AP Chemistry, AP Biology, AP Computer Science A, Data Structures (Rutgers University)
+              </p>
+            </Item>
           </div>
         </section>
 
@@ -444,49 +243,18 @@ export default function Home() {
           <h2 className={styles.sectionTitleLarge}>Awards</h2>
           
           <div className={styles.itemList}>
-            <div className={styles.itemContainer}>
-              <div className={styles.item}>
-                <div className={styles.itemContent}>
-                  <div>
-                    <h3 className={styles.itemTitle}>2x USA Mathematical Olympiad Qualifier</h3>
-                    <p className={styles.itemSubtitle}>139.5 AMC 12, 13 AIME</p>
-                  </div>
-                  <div className={styles.itemRight}>
-                    <span className={styles.itemDate}>2025 - 2026</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Item
+              title="2x USA Mathematical Olympiad Qualifier"
+              subtitle="139.5 AMC 12, 13 AIME"
+            />
           </div>
 
           <div className={styles.itemList}>
-            <div className={styles.itemContainer}>
-              <div className={styles.item}>
-                <div className={styles.itemContent}>
-                  <div>
-                    <h3 className={styles.itemTitle}>5x AIME Qualifier</h3>
-                  </div>
-                  <div className={styles.itemRight}>
-                    <span className={styles.itemDate}>2021 - 2025</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Item title="5x AIME Qualifier" />
           </div>
 
           <div className={styles.itemList}>
-            <div className={styles.itemContainer}>
-              <div className={styles.item}>
-                <div className={styles.itemContent}>
-                  <div>
-                    <h3 className={styles.itemTitle}>USA Computing Olympiad Gold</h3>
-                  </div>
-                  <div className={styles.itemRight}>
-                    <span className={styles.itemDate}>2023</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Item title="USA Computing Olympiad Gold" />
           </div>
         </section>
 
@@ -499,45 +267,47 @@ export default function Home() {
                 <div className={styles.projectContent}>
                   <div className={styles.projectHeader}>
                     <h3 className={styles.projectTitle}>{project.title}</h3>
+                    <div className={styles.projectLinks}>
+                      {project.actions.map((action) => {
+                        const icon = action.kind === 'source'
+                          ? <FaGithub aria-hidden="true" />
+                          : <LuGlobe aria-hidden="true" />;
+                        const key = `${project.title}-${action.kind}-${action.label}`;
+
+                        if (!action.href) {
+                          return (
+                            <span
+                              key={key}
+                              className={styles.projectLinkDisabled}
+                              aria-disabled="true"
+                              title={`${action.label} unavailable`}
+                            >
+                              {icon}
+                            </span>
+                          );
+                        }
+
+                        return (
+                          <a
+                            key={key}
+                            href={action.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.projectLink}
+                            aria-label={`${project.title} — ${action.label}`}
+                            title={action.label}
+                          >
+                            {icon}
+                          </a>
+                        );
+                      })}
+                    </div>
                   </div>
                   <p className={styles.projectDescription}>{project.description}</p>
                   <div className={styles.projectTech}>
                     {project.tech.map((tech) => (
                       <span key={`${project.title}-${tech}`} className={styles.techTag}>{tech}</span>
                     ))}
-                  </div>
-                  <div className={styles.projectLinks}>
-                    {project.actions.map((action) => {
-                      const icon = action.kind === 'source'
-                        ? <FaGithub />
-                        : <LuGlobe />;
-
-                      if (!action.href) {
-                        return (
-                          <span
-                            key={`${project.title}-${action.kind}-${action.label}`}
-                            className={styles.projectLinkDisabled}
-                            aria-disabled="true"
-                          >
-                            {icon}
-                            {action.label}
-                          </span>
-                        );
-                      }
-
-                      return (
-                        <a
-                          key={`${project.title}-${action.kind}-${action.label}`}
-                          href={action.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={styles.projectLink}
-                        >
-                          {icon}
-                          {action.label}
-                        </a>
-                      );
-                    })}
                   </div>
                 </div>
               </div>
