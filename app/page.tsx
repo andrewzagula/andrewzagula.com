@@ -107,9 +107,6 @@ export default function Home() {
               </span>
             </button>
           </div>
-          <p className={styles.heroDescription}>
-            I&apos;m a freshman at Caltech studying computer science with a minor in robotics.
-          </p>
           <div className={styles.heroSocials}>
             <a
               href="mailto:andrewzagula800@gmail.com"
@@ -166,7 +163,7 @@ export default function Home() {
               onToggle={() => toggleItem('work-4')}
             >
               <p className={styles.itemDescription}>
-                Programmable cancer elimination (YC P26)
+                Programmable cancer elimination
               </p>
             </Item>
 
@@ -180,7 +177,7 @@ export default function Home() {
               onToggle={() => toggleItem('work-5')}
             >
               <p className={styles.itemDescription}>
-                AI-powered uranium discovery (YC W26)
+                AI-powered uranium discovery
               </p>
             </Item>
 

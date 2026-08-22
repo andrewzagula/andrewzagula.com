@@ -103,13 +103,6 @@
   margin-left: 0.5rem;
 }
 
-.heroDescription {
-  font-size: 18px;
-  color: var(--muted);
-  margin: 0;
-  font-weight: 500;
-}
-
 .heroSocials {
   display: flex;
   justify-content: flex-start;
