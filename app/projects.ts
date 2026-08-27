@@ -32,7 +32,7 @@ export const projects: Project[] = [
   {
     title: 'Alumhub',
     description: 'Student-alumni social networking platform',
-    tech: ['JavaScript', 'CSS', 'Next.js', 'Firebase', 'Stripe', 'OpenAI API'],
+    tech: ['JavaScript', 'CSS', 'Next.js', 'OpenAI API', 'Firebase', 'Stripe'],
     actions: [
       { kind: 'website', label: 'Website', href: 'https://thealumhub.com' },
     ],
