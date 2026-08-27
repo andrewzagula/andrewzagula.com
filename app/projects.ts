@@ -15,7 +15,7 @@ export const projects: Project[] = [
   {
     title: 'Walkthru',
     description: 'Knowledge check for code you ship ($1K winner at NY Tech Week)',
-    tech: ['TypeScript', 'Next.js', 'React', 'Vercel AI SDK', 'Anthropic API', 'PostgreSQL', 'Tailwind CSS', 'Node.js', 'Vercel'],
+    tech: ['TypeScript', 'Next.js', 'Vercel AI SDK', 'Anthropic API', 'PostgreSQL'],
     actions: [
       { kind: 'source', label: 'Source', href: 'https://github.com/andrewzagula/Walkthru' },
       { kind: 'website', label: 'Website', href: 'https://trywalkthru.vercel.app/' },
@@ -24,7 +24,7 @@ export const projects: Project[] = [
   {
     title: 'Eidola',
     description: 'Multimodal knowledge base for your life',
-    tech: ['TypeScript', 'Python', 'Next.js', 'React', 'FastAPI', 'Supabase', 'pgvector', 'Gemini API', 'Anthropic API', 'Stripe', 'Tailwind CSS', 'Docker'],
+    tech: ['TypeScript', 'Python', 'Next.js', 'FastAPI', 'Anthropic API', 'Gemini API', 'Supabase', 'pgvector', 'Stripe', 'Cloud Run'],
     actions: [
       { kind: 'website', label: 'Website', href: 'https://eidola.me' },
     ],
@@ -32,7 +32,7 @@ export const projects: Project[] = [
   {
     title: 'Alumhub',
     description: 'Student-alumni social networking platform',
-    tech: ['JavaScript', 'CSS', 'Next.js', 'React', 'Firebase', 'Stripe', 'OpenAI API', 'Node.js', 'Vercel'],
+    tech: ['JavaScript', 'CSS', 'Next.js', 'Firebase', 'Stripe', 'OpenAI API'],
     actions: [
       { kind: 'website', label: 'Website', href: 'https://thealumhub.com' },
     ],
@@ -40,7 +40,7 @@ export const projects: Project[] = [
   {
     title: 'PaperTrail',
     description: 'Research assistant for scientific literature',
-    tech: ['Python', 'TypeScript', 'FastAPI', 'Next.js', 'React', 'LangChain', 'LangGraph', 'OpenAI API', 'ChromaDB', 'SQLite', 'Tailwind CSS'],
+    tech: ['Python', 'TypeScript', 'FastAPI', 'Next.js', 'LangGraph', 'OpenAI API', 'ChromaDB', 'SQLite'],
     actions: [
       { kind: 'source', label: 'Source', href: 'https://github.com/andrewzagula/PaperTrail' },
     ],
@@ -48,7 +48,7 @@ export const projects: Project[] = [
   {
     title: 'Rewind',
     description: 'Quantitative trading research platform',
-    tech: ['Python', 'TypeScript', 'FastAPI', 'Next.js', 'React', 'OpenAI API', 'PostgreSQL', 'Redis', 'DuckDB', 'pandas', 'Tailwind CSS', 'Docker'],
+    tech: ['Python', 'TypeScript', 'FastAPI', 'Next.js', 'OpenAI API', 'PostgreSQL', 'Redis', 'DuckDB'],
     actions: [
       { kind: 'source', label: 'Source', href: 'https://github.com/andrewzagula/Rewind' },
     ],
@@ -56,7 +56,7 @@ export const projects: Project[] = [
   {
     title: 'AUDIT',
     description: 'Vulnerability scanner for codebases',
-    tech: ['Python', 'OpenAI API', 'Typer', 'ChromaDB', 'SQLite', 'PyInstaller', 'Node.js'],
+    tech: ['Python', 'Typer', 'OpenAI API', 'ChromaDB', 'SQLite', 'PyInstaller', 'npm'],
     actions: [
       { kind: 'source', label: 'Source', href: 'https://github.com/AryaVaidya08/AUDIT' },
     ],
