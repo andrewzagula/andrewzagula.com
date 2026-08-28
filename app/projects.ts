@@ -24,7 +24,7 @@ export const projects: Project[] = [
   {
     title: 'Eidola',
     description: 'Multimodal knowledge base for your life',
-    tech: ['TypeScript', 'Python', 'Next.js', 'FastAPI', 'Anthropic API', 'Gemini API', 'Supabase', 'pgvector', 'Stripe', 'Cloud Run'],
+    tech: ['TypeScript', 'Python', 'Next.js', 'FastAPI', 'Anthropic API', 'Gemini API', 'Supabase', 'pgvector', 'Inngest', 'Stripe', 'Cloud Run'],
     actions: [
       { kind: 'website', label: 'Website', href: 'https://eidola.me' },
     ],
@@ -48,7 +48,7 @@ export const projects: Project[] = [
   {
     title: 'Rewind',
     description: 'Quantitative trading research platform',
-    tech: ['Python', 'TypeScript', 'FastAPI', 'Next.js', 'OpenAI API', 'PostgreSQL', 'Redis', 'DuckDB'],
+    tech: ['Python', 'TypeScript', 'FastAPI', 'Next.js', 'OpenAI API', 'PostgreSQL', 'Redis'],
     actions: [
       { kind: 'source', label: 'Source', href: 'https://github.com/andrewzagula/Rewind' },
     ],
