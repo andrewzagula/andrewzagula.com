@@ -165,6 +165,9 @@ export default function Home() {
               <p className={styles.itemDescription}>
                 Programmable cancer elimination
               </p>
+              <div className={styles.itemLinks}>
+                <ExternalLink href="https://www.finaldose.ai/">Website</ExternalLink>
+              </div>
             </Item>
 
             <Item
@@ -179,6 +182,9 @@ export default function Home() {
               <p className={styles.itemDescription}>
                 AI-powered uranium discovery
               </p>
+              <div className={styles.itemLinks}>
+                <ExternalLink href="https://terranox.ai/">Website</ExternalLink>
+              </div>
             </Item>
 
             <Item
