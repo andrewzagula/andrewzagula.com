@@ -78,10 +78,10 @@ export default function Home() {
                   emoji's taller line box and any wrapping on narrow screens —
                   so the page doesn't shift down as the text types in. */}
               <span className={styles.heroTitlePlaceholder} aria-hidden="true">
-                Hi, I&apos;m Andrew 👋<span className={styles.heroTypewriterCursor}>|</span>
+                Hey, I&apos;m Andrew 👋<span className={styles.heroTypewriterCursor}>|</span>
               </span>
               <TypeAnimation
-                sequence={["Hi, I'm Andrew 👋", 2000]}
+                sequence={["Hey, I'm Andrew 👋", 2000]}
                 wrapper="span"
                 speed={25}
                 cursor={true}
