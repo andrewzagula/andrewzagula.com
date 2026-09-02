@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
         source: "/Resume.pdf",
         destination: "/resume.pdf",
       },
+      {
+        source: "/resume2030",
+        destination: "/resume2030.pdf",
+      },
     ];
   },
 };
