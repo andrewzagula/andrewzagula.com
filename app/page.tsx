@@ -209,7 +209,7 @@ export default function Home() {
               logoSrc="/BU.png"
               logoAlt="Boston University"
               title="Boston University"
-              subtitle="Research Intern (RISE)"
+              subtitle="Research Intern"
               date="Jun 2025 - Aug 2025"
               expanded={expandedItems.has('work-1')}
               onToggle={() => toggleItem('work-1')}
