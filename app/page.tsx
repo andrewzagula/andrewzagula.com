@@ -157,13 +157,13 @@ export default function Home() {
               logoSrc="/FD.png"
               logoAlt="FinalDose"
               title="FinalDose"
-              subtitle="Software Engineer"
+              subtitle="Software Engineer Intern"
               date="Aug 2026 - Present"
               expanded={expandedItems.has('work-4')}
               onToggle={() => toggleItem('work-4')}
             >
               <p className={styles.itemDescription}>
-                Programmable cancer elimination
+                Programmable cancer elimination (YC P26)
               </p>
               <div className={styles.itemLinks}>
                 <ExternalLink href="https://www.finaldose.ai/">Website</ExternalLink>
@@ -174,13 +174,13 @@ export default function Home() {
               logoSrc="/TX.png"
               logoAlt="Terranox AI"
               title="Terranox AI"
-              subtitle="Software Engineer"
+              subtitle="Software Engineer Intern"
               date="Jun 2026 - Aug 2026"
               expanded={expandedItems.has('work-5')}
               onToggle={() => toggleItem('work-5')}
             >
               <p className={styles.itemDescription}>
-                AI-powered uranium discovery
+                AI-powered uranium discovery (YC W26)
               </p>
               <div className={styles.itemLinks}>
                 <ExternalLink href="https://terranox.ai/">Website</ExternalLink>
