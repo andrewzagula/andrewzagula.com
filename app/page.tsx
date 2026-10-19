@@ -158,7 +158,7 @@ export default function Home() {
               logoAlt="FinalDose"
               title="FinalDose"
               subtitle="Software Engineer Intern"
-              date="Aug 2026 - Present"
+              date="Aug 2026 - Oct 2026"
               expanded={expandedItems.has('work-4')}
               onToggle={() => toggleItem('work-4')}
             >
